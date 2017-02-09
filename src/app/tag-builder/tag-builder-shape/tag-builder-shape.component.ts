@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Store, provideStore } from '@ngrx/store';
 
 @Component({
   selector: 'app-tag-builder-shape',
@@ -6,15 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./tag-builder-shape.component.css']
 })
 export class TagBuilderShapeComponent implements OnInit {
-  shape: string;
-
+  
   constructor() { }
 
   ngOnInit() {
   }
 
-  pickShape(selectedShape) {
-    this.shape = selectedShape;
+  selectShape(selectedShape) {
+    
   }
 
 }
