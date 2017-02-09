@@ -1,0 +1,12 @@
+.tagShape-img {
+  height: 200px;
+  width: 100%;
+}
+img {
+  display: block;
+  height: auto;
+  margin: 0 auto;
+  max-height: 100px;
+  max-width: 100%;
+  width: auto;
+}
