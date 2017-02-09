@@ -16,9 +16,9 @@
       "polyfills": "polyfills.ts",
       "test": "test.ts",
       "tsconfig": "tsconfig.json",
-      "prefix": "app",
+      "prefix": "pt",
       "styles": [
-        "styles.css"
+        "assets/styles.css"
       ],
       "scripts": [],
       "environments": {
