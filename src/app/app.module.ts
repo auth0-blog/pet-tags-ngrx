@@ -6,7 +6,6 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './core/app.component';
 import { TagBuilderComponent } from './tag-builder/tag-builder.component';
 import { TagBuilderShapeComponent } from './tag-builder/tag-builder-shape/tag-builder-shape.component';
-import { TagBuilderTextComponent } from './tag-builder/tag-builder-text/tag-builder-text.component';
 import { StoreModule } from '@ngrx/store';
 import { petTagReducer } from './reducers/pet-tag.reducer';
 
@@ -14,8 +13,7 @@ import { petTagReducer } from './reducers/pet-tag.reducer';
   declarations: [
     AppComponent,
     TagBuilderComponent,
-    TagBuilderShapeComponent,
-    TagBuilderTextComponent
+    TagBuilderShapeComponent
   ],
   imports: [
     BrowserModule,

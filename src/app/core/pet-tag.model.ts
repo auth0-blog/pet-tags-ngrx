@@ -1,6 +1,8 @@
-export interface PetTag {
-  shape: string;
-  font: string;
-  text: string;
-  gems: boolean;
+export class PetTag {
+  constructor(
+    public shape: string,
+    public font: string,
+    public text: string,
+    public gems: boolean
+  ) { }
 }

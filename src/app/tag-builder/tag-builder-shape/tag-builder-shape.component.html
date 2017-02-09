@@ -2,6 +2,8 @@
   Click a tag shape to select it:
 </p>
 
+<button class="btn btn-primary" (click)="createTag()">START</button>
+
 <div class="row">
   <a class="tagShape col-md-3" (click)="selectShape('bone')">
     <img src="/assets/images/bone.svg">
@@ -25,3 +27,6 @@
   <button class="btn btn-primary">Next</button>
 </div>
 
+<div class="row">
+  Select font: <a (click)="selectFont('Arial')">Arial</a> | <a (click)="selectFont('Times New Roman')">Times New Roman</a>
+</div>
