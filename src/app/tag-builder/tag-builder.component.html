@@ -1,3 +1,26 @@
 <p>
-  tag-builder works!
+  Click a tag shape to select it:
 </p>
+
+<div class="row">
+  <a class="tagShape col-md-3" (click)="pickShape('bone')">
+    <img src="/assets/images/bone.svg">
+  </a>
+
+  <a class="tagShape col-md-3" (click)="pickShape('rectangle')">
+    <img src="/assets/images/rectangle.svg">
+  </a>
+
+  <a class="tagShape col-md-3" (click)="pickShape('circle')">
+    <img src="/assets/images/circle.svg">
+  </a>
+
+  <a class="tagShape col-md-3" (click)="pickShape('heart')">
+    <img src="/assets/images/heart.svg">
+  </a>
+</div>
+
+<div class="row" *ngIf="shape">
+  <p class="col-sm-12"><strong>You have selected:</strong> {{shape}}</p>
+  <button class="btn btn-primary">Next</button>
+</div>
