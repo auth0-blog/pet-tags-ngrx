@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Store, provideStore } from '@ngrx/store';
+import { Store } from '@ngrx/store';
+import { SELECT_SHAPE, SELECT_FONT, ADD_TEXT, TOGGLE_GEMS } from './../../reducers/pet-tag.reducer';
 
 @Component({
   selector: 'app-tag-builder-shape',
@@ -8,13 +9,13 @@ import { Store, provideStore } from '@ngrx/store';
 })
 export class TagBuilderShapeComponent implements OnInit {
   
-  constructor() { }
+  constructor(private store: Store<any>) { }
 
   ngOnInit() {
   }
 
-  selectShape(selectedShape) {
-    
+  selectShape(shape) {
+    this.store.dispatch({ type: SELECT_SHAPE, payload: shape })
   }
 
 }
