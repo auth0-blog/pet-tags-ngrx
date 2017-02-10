@@ -12,6 +12,7 @@ export class TagViewComponent implements OnInit {
   tagState$: Observable<PetTag>
   petTag: PetTag;
   imgSrc: string = '';
+  tagClipText: string;
 
   constructor(private _store: Store<PetTag>) {
     this.tagState$ = _store.select('petTag');
@@ -21,6 +22,7 @@ export class TagViewComponent implements OnInit {
     this.tagState$.subscribe((state) => {
       this.petTag = state;
       this.imgSrc = `/assets/images/${this.petTag.shape}.svg`;
+      this.tagClipText = this.petTag.clip ? 'Yes' : 'No';
     });
   }
 

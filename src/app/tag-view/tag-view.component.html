@@ -1,10 +1,14 @@
-<p>
-  {{petTag.font}} {{petTag.text}} {{petTag.clip}}
-</p>
+<div *ngIf="petTag.shape">
 
-<div class="row tagView {{petTag.shape}}" *ngIf="petTag.shape">
-  <img [src]="imgSrc" />
-  <div class="text {{petTag.font}}">
-    {{petTag.text}}
+  <div class="tagView {{petTag.shape}}">
+    <img [src]="imgSrc" />
+    <div class="text {{petTag.font}}">
+      {{petTag.text}}
+    </div>
   </div>
+
+  <p>
+    <strong>Tag clip included:</strong> {{tagClipText}}
+  </p>
+
 </div>

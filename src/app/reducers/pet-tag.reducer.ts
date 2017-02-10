@@ -9,7 +9,7 @@ export const INCLUDE_CLIP = 'INCLUDE_CLIP';
 export function petTagReducer(
   state: PetTag = {
     shape: '',
-    font: '',
+    font: 'sans-serif',
     text: '',
     clip: false
   },
