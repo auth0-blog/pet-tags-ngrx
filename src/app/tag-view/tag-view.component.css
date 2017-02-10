@@ -1,6 +1,30 @@
+.tagView {
+  height: 284px;
+  position: relative;
+  width: 100%;
+}
 img {
   display: block;
-  height: 284px;
+  height: 100%;
   margin: 0 auto;
   width: auto;
+}
+.text {
+  font-size: 48px;
+  position: absolute;
+  text-align: center;
+  text-shadow: 1px 1px 0 rgba(255,255,255,.8);
+  top: 99px;
+  width: 100%;
+}
+.bone .text,
+.rectangle .text {
+  font-size: 74px;
+  top: 85px;
+}
+.sans-serif {
+  font-family: Arial, Helvetica, sans-serif;
+}
+.serif {
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }

@@ -25,7 +25,7 @@
 </div>
 
 <div class="row">
-  Select font: <a (click)="selectFont('Arial')">Arial</a> | <a (click)="selectFont('Times New Roman')">Times New Roman</a>
+  Select type style: <a (click)="selectFont('sans-serif')">Sans-serif</a> | <a (click)="selectFont('serif')">Serif</a>
 </div>
 
 <div class="row">
@@ -35,7 +35,8 @@
       id="tagText"
       type="text"
       [(ngModel)]="tagTextInput"
-      (input)="addText(tagTextInput)" />
+      (input)="addText(tagTextInput)"
+      maxlength="8" />
   </div>
 </div>
 
