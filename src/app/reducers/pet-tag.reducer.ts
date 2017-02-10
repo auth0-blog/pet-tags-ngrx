@@ -1,45 +1,41 @@
 import { ActionReducer, Action } from '@ngrx/store';
+import { PetTag } from './../core/pet-tag.model';
 
-export const CREATE_TAG = 'CREATE_TAG';
 export const SELECT_SHAPE = 'SELECT_SHAPE';
 export const SELECT_FONT = 'SELECT_FONT';
 export const ADD_TEXT = 'ADD_TEXT';
-export const TOGGLE_GEMS = 'TOGGLE_GEMS';
+export const INCLUDE_CLIP = 'INCLUDE_CLIP';
 
-export function petTagReducer(state = [], action: Action) {
-  switch(action.type) {
-    case CREATE_TAG: {
-      return [action.payload];
-    }
-    case SELECT_SHAPE: {
-      return state.map(tag => {
-        return Object.assign({}, tag, {
+export function petTagReducer(
+  state: PetTag = {
+    shape: '',
+    font: '',
+    text: '',
+    clip: false
+  },
+  action: Action) {
+    switch(action.type) {
+      case SELECT_SHAPE: {
+        return Object.assign({}, state, {
           shape: action.payload
         });
-      });
-    }
-    case SELECT_FONT: {
-      return state.map(tag => {
-        return Object.assign({}, tag, {
+      }
+      case SELECT_FONT: {
+        return Object.assign({}, state, {
           font: action.payload
         });
-      });
-    }
-    case ADD_TEXT: {
-      return state.map(tag => {
-        return Object.assign({}, tag, {
+      }
+      case ADD_TEXT: {
+        return Object.assign({}, state, {
           text: action.payload
         });
-      });
-    }
-    case TOGGLE_GEMS: {
-      return state.map(tag => {
-        return Object.assign({}, tag, {
-          gems: !tag.gems
+      }
+      case INCLUDE_CLIP: {
+        return Object.assign({}, state, {
+          clip: action.payload
         });
-      });
-    }
-    default:
-      return state;
+      }
+      default:
+        return state;
   }
 }

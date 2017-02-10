@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
-import { CREATE_TAG, SELECT_SHAPE, SELECT_FONT, ADD_TEXT, TOGGLE_GEMS } from './../../reducers/pet-tag.reducer';
+import { SELECT_SHAPE, SELECT_FONT, ADD_TEXT, INCLUDE_CLIP } from './../../reducers/pet-tag.reducer';
 import { PetTag } from './../../core/pet-tag.model';
 
 @Component({
@@ -10,41 +10,45 @@ import { PetTag } from './../../core/pet-tag.model';
   styleUrls: ['./tag-builder-shape.component.css']
 })
 export class TagBuilderShapeComponent implements OnInit {
-  petTag$: Observable<PetTag>
+  tagState$: Observable<PetTag>
+  petTag: PetTag;
+  tagTextInput: string = '';
 
-  constructor(private store: Store<any>) {
-    this.petTag$ = store.select('petTag');
+  constructor(private _store: Store<PetTag>) {
+    this.tagState$ = _store.select('petTag');
   }
 
   ngOnInit() {
-    this.petTag$.subscribe((state) => {
-      console.log(state);
-    });
-  }
-
-  createTag() {
-    this.store.dispatch({ 
-      type: CREATE_TAG, 
-      payload: {
-        shape: '',
-        font: '',
-        text: '',
-        gems: false
-      }
+    this.tagState$.subscribe((state) => {
+      this.petTag = state;
     });
   }
 
   selectShape(shape) {
-    this.store.dispatch({
+    this._store.dispatch({
       type: SELECT_SHAPE,
       payload: shape
     });
   }
 
   selectFont(font) {
-    this.store.dispatch({
+    this._store.dispatch({
       type: SELECT_FONT,
       payload: font
+    });
+  }
+
+  addText(text) {
+    this._store.dispatch({
+      type: ADD_TEXT,
+      payload: text
+    });
+  }
+
+  includeClip(clip) {
+    this._store.dispatch({
+      type: INCLUDE_CLIP,
+      payload: clip
     });
   }
 

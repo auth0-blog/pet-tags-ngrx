@@ -3,6 +3,6 @@ export class PetTag {
     public shape: string,
     public font: string,
     public text: string,
-    public gems: boolean
+    public clip: boolean
   ) { }
 }
