@@ -1,3 +1,46 @@
 <p class="lead text-center">Create a customized name tag for your beloved pet!</p>
 
-<app-tag-builder-shape></app-tag-builder-shape>
+<app-tag-view></app-tag-view>
+
+<p>
+  Select a tag shape:
+</p>
+
+<div class="row">
+  <a class="tagShape col-md-3" (click)="selectShape('bone')">
+    <img src="/assets/images/bone.svg">
+  </a>
+
+  <a class="tagShape col-md-3" (click)="selectShape('rectangle')">
+    <img src="/assets/images/rectangle.svg">
+  </a>
+
+  <a class="tagShape col-md-3" (click)="selectShape('circle')">
+    <img src="/assets/images/circle.svg">
+  </a>
+
+  <a class="tagShape col-md-3" (click)="selectShape('heart')">
+    <img src="/assets/images/heart.svg">
+  </a>
+</div>
+
+<div class="row">
+  Select font: <a (click)="selectFont('Arial')">Arial</a> | <a (click)="selectFont('Times New Roman')">Times New Roman</a>
+</div>
+
+<div class="row">
+  <div class="col-sm-12">
+    <label for="tagText">Text:</label>
+    <input
+      id="tagText"
+      type="text"
+      [(ngModel)]="tagTextInput"
+      (input)="addText(tagTextInput)" />
+  </div>
+</div>
+
+<div class="row">
+  <label>
+    <input type="checkbox" [(ngModel)]="tagClip" (change)="includeClip(tagClip)"> Include Clip
+  </label>
+</div>

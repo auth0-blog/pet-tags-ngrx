@@ -5,15 +5,15 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './core/app.component';
 import { TagBuilderComponent } from './tag-builder/tag-builder.component';
-import { TagBuilderShapeComponent } from './tag-builder/tag-builder-shape/tag-builder-shape.component';
 import { StoreModule } from '@ngrx/store';
 import { petTagReducer } from './reducers/pet-tag.reducer';
+import { TagViewComponent } from './tag-view/tag-view.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TagBuilderComponent,
-    TagBuilderShapeComponent
+    TagViewComponent
   ],
   imports: [
     BrowserModule,
