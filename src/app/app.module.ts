@@ -6,6 +6,7 @@ import { HttpModule } from '@angular/http';
 import { AppRoutingModule } from './core/app-routing.module';
 import { StoreModule } from '@ngrx/store';
 import { petTagReducer } from './core/pet-tag.reducer';
+import { AuthService } from './core/auth.service';
 
 import { AppComponent } from './core/app.component';
 import { TagBuilderComponent } from './tag-builder/tag-builder.component';
@@ -31,10 +32,12 @@ import { CompleteComponent } from './complete/complete.component';
     BrowserModule,
     FormsModule,
     HttpModule,
-    AppRoutingModule,
-    StoreModule.provideStore({ petTag: petTagReducer })
+    StoreModule.provideStore({ petTag: petTagReducer }),
+    AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    AuthService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
