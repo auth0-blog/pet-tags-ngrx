@@ -7,7 +7,7 @@ import { AppComponent } from './core/app.component';
 import { TagBuilderComponent } from './tag-builder/tag-builder.component';
 import { StoreModule } from '@ngrx/store';
 import { petTagReducer } from './reducers/pet-tag.reducer';
-import { TagViewComponent } from './tag-view/tag-view.component';
+import { TagPreviewComponent } from './tag-preview/tag-preview.component';
 import { TagShapeComponent } from './tag-builder/tag-shape/tag-shape.component';
 import { TagTextComponent } from './tag-builder/tag-text/tag-text.component';
 import { TagExtrasComponent } from './tag-builder/tag-extras/tag-extras.component';
@@ -16,7 +16,7 @@ import { TagExtrasComponent } from './tag-builder/tag-extras/tag-extras.componen
   declarations: [
     AppComponent,
     TagBuilderComponent,
-    TagViewComponent,
+    TagPreviewComponent,
     TagShapeComponent,
     TagTextComponent,
     TagExtrasComponent

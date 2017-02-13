@@ -1,13 +1,3 @@
 <app-tag-shape></app-tag-shape>
 <app-tag-text *ngIf="petTag.shape"></app-tag-text>
 <app-tag-extras *ngIf="petTag.shape"></app-tag-extras>
-
-<div class="row">
-  <p class="col-sm-12 text-center">
-    <button
-      class="btn btn-success btn-lg"
-      *ngIf="petTag.shape"
-      [disabled]="!done"
-      (click)="submit()">Done</button>
-  </p>
-</div>

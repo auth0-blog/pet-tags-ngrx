@@ -21,7 +21,7 @@ export class TagExtrasComponent {
 
   addGems(gems: boolean) {
     this._store.dispatch({
-      type: INCLUDE_CLIP,
+      type: ADD_GEMS,
       payload: gems
     });
   }

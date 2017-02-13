@@ -1,3 +1,7 @@
+:host {
+  display: block;
+  margin: 20px 0;
+}
 .tagShape {
   padding: 10px;
   text-align: center;

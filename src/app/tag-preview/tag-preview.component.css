@@ -1,3 +1,7 @@
+.tagView-wrapper {
+  border-top: 1px solid #ccc;
+  padding-top: 20px;
+}
 .tagView {
   height: 284px;
   position: relative;
