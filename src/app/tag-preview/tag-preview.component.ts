@@ -15,20 +15,20 @@ export class TagPreviewComponent implements OnInit {
   tagClipText: string;
   gemsText: string;
 
-  constructor(private _store: Store<PetTag>) {
-    this.tagState$ = _store.select('petTag');
+  constructor(private store: Store<PetTag>) {
+    this.tagState$ = store.select('petTag');
   }
 
   ngOnInit() {
     this.tagState$.subscribe((state) => {
       this.petTag = state;
       this.imgSrc = `/assets/images/${this.petTag.shape}.svg`;
-      this.tagClipText = this._boolToText(this.petTag.clip);
-      this.gemsText = this._boolToText(this.petTag.gems);
+      this.tagClipText = this.boolToText(this.petTag.clip);
+      this.gemsText = this.boolToText(this.petTag.gems);
     });
   }
 
-  private _boolToText(bool: boolean) {
+  private boolToText(bool: boolean) {
     return bool ? 'Yes' : 'No';
   }
 

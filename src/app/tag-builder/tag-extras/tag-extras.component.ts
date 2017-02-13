@@ -10,17 +10,17 @@ import { PetTag } from './../../core/pet-tag.model';
 })
 export class TagExtrasComponent {
 
-  constructor(private _store: Store<PetTag>) { }
+  constructor(private store: Store<PetTag>) { }
 
   includeClip(clip: boolean) {
-    this._store.dispatch({
+    this.store.dispatch({
       type: INCLUDE_CLIP,
       payload: clip
     });
   }
 
   addGems(gems: boolean) {
-    this._store.dispatch({
+    this.store.dispatch({
       type: ADD_GEMS,
       payload: gems
     });

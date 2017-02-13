@@ -10,10 +10,10 @@ import { PetTag } from './../../core/pet-tag.model';
 })
 export class TagShapeComponent {
 
-  constructor(private _store: Store<PetTag>) { }
+  constructor(private store: Store<PetTag>) { }
 
   selectShape(shape: string) {
-    this._store.dispatch({
+    this.store.dispatch({
       type: SELECT_SHAPE,
       payload: shape
     });

@@ -12,17 +12,17 @@ export class TagTextComponent {
   tagTextInput: string = '';
   fontType: string = 'sans-serif';
 
-  constructor(private _store: Store<PetTag>) {}
+  constructor(private store: Store<PetTag>) {}
 
   selectFont(font: string) {
-    this._store.dispatch({
+    this.store.dispatch({
       type: SELECT_FONT,
       payload: font
     });
   }
 
   addText(text: string) {
-    this._store.dispatch({
+    this.store.dispatch({
       type: ADD_TEXT,
       payload: text
     });

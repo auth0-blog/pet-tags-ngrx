@@ -21,8 +21,8 @@ export class CompleteComponent implements OnInit {
     complete: false
   };
 
-  constructor(private _store: Store<PetTag>) {
-    this.tagState$ = _store.select('petTag');
+  constructor(private store: Store<PetTag>) {
+    this.tagState$ = store.select('petTag');
   }
 
   ngOnInit() {
@@ -32,7 +32,7 @@ export class CompleteComponent implements OnInit {
   }
 
   newTag() {
-    this._store.dispatch({
+    this.store.dispatch({
       type: RESET,
       payload: this.emptyTag
     });

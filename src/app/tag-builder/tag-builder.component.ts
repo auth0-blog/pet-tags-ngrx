@@ -12,8 +12,8 @@ export class TagBuilderComponent {
   tagState$: Observable<PetTag>
   petTag: PetTag;
 
-  constructor(private _store: Store<PetTag>) {
-    this.tagState$ = _store.select('petTag');
+  constructor(private store: Store<PetTag>) {
+    this.tagState$ = store.select('petTag');
   }
 
   ngOnInit() {
