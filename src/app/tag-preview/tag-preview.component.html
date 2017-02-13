@@ -15,20 +15,3 @@
   </div>
 
 </div>
-
-<div class="row">
-  <div class="col-sm-12 text-center">
-    <p class="form-text text-muted" *ngIf="petTag.shape">
-      Preview your customized tag above.<br>
-      If you're happy with the results,<br>
-      click the button below to finish!
-    </p>
-    <p>
-      <button
-        class="btn btn-success btn-lg"
-        *ngIf="petTag.shape"
-        [disabled]="!done"
-        (click)="submit()">Done</button>
-    </p>
-  </div>
-</div>

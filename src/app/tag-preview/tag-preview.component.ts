@@ -14,7 +14,6 @@ export class TagPreviewComponent implements OnInit {
   imgSrc: string = '';
   tagClipText: string;
   gemsText: string;
-  done: boolean = false;
 
   constructor(private _store: Store<PetTag>) {
     this.tagState$ = _store.select('petTag');
@@ -26,16 +25,11 @@ export class TagPreviewComponent implements OnInit {
       this.imgSrc = `/assets/images/${this.petTag.shape}.svg`;
       this.tagClipText = this._boolToText(this.petTag.clip);
       this.gemsText = this._boolToText(this.petTag.gems);
-      this.done = !!(this.petTag.shape && this.petTag.text)
     });
   }
 
   private _boolToText(bool: boolean) {
     return bool ? 'Yes' : 'No';
-  }
-
-  submit() {
-    console.log('Final tag:', this.petTag);
   }
 
 }

@@ -6,14 +6,17 @@ export const SELECT_FONT = 'SELECT_FONT';
 export const ADD_TEXT = 'ADD_TEXT';
 export const INCLUDE_CLIP = 'INCLUDE_CLIP';
 export const ADD_GEMS = 'ADD_GEMS';
+export const COMPLETE = 'COMPLETE';
+export const RESET = 'RESET';
 
 export function petTagReducer(
-  state: PetTag = {
+    state: PetTag = {
     shape: '',
     font: 'sans-serif',
     text: '',
     clip: false,
-    gems: false
+    gems: false,
+    complete: false
   },
   action: Action) {
     switch(action.type) {
@@ -41,6 +44,14 @@ export function petTagReducer(
         return Object.assign({}, state, {
           gems: action.payload
         });
+      }
+      case COMPLETE: {
+        return Object.assign({}, state, {
+          complete: action.payload
+        });
+      }
+      case RESET: {
+        return Object.assign({}, state, action.payload);
       }
       default:
         return state;

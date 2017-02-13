@@ -1,0 +1,15 @@
+<div *ngIf="petTag.complete">
+  <div class="row">
+    <p class="col-sm-12 alert alert-success">
+      <strong>Congratulations!</strong> You've completed a pet ID tag for <strong>{{petTag.text}}</strong>. Would you like to <a (click)="newTag()" routerLink="/" class="alert-link">create another?</a>
+    </p>
+  </div>
+
+  <app-tag-preview></app-tag-preview>
+</div>
+
+<div *ngIf="!petTag.complete" class="row">
+  <p class="col-sm-12 alert alert-danger">
+    <strong>Oops!</strong> You haven't customized a tag yet. <a routerLink="/" class="alert-link">Click here to create one now.</a>
+  </p>
+</div>
