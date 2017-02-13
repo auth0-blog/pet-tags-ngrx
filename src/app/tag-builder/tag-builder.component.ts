@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
+import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
-import { SELECT_SHAPE, SELECT_FONT, ADD_TEXT, INCLUDE_CLIP } from './../reducers/pet-tag.reducer';
 import { PetTag } from './../core/pet-tag.model';
 
 @Component({
@@ -9,36 +9,21 @@ import { PetTag } from './../core/pet-tag.model';
   styleUrls: ['./tag-builder.component.css']
 })
 export class TagBuilderComponent {
-  tagTextInput: string = '';
-  fontType: string = 'sans-serif';
+  tagState$: Observable<PetTag>
+  petTag: PetTag;
+  finished: boolean = false;
 
-  constructor(private _store: Store<PetTag>) {}
-
-  selectShape(shape: string) {
-    this._store.dispatch({
-      type: SELECT_SHAPE,
-      payload: shape
-    });
+  constructor(private _store: Store<PetTag>) {
+    this.tagState$ = _store.select('petTag');
   }
 
-  selectFont(font: string) {
-    this._store.dispatch({
-      type: SELECT_FONT,
-      payload: font
-    });
-  }
+  ngOnInit() {
+    this.tagState$.subscribe((state) => {
+      this.petTag = state;
 
-  addText(text: string) {
-    this._store.dispatch({
-      type: ADD_TEXT,
-      payload: text
-    });
-  }
-
-  includeClip(clip: boolean) {
-    this._store.dispatch({
-      type: INCLUDE_CLIP,
-      payload: clip
+      if (this.petTag.shape && this.petTag.text) {
+        this.finished = true;
+      }
     });
   }
 
