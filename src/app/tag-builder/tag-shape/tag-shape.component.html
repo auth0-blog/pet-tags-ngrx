@@ -6,7 +6,7 @@
 </div>
 
 <div class="row">
-  <a class="tagShape col-sm-3" (click)="selectShape('bone')">
+  <!--<a class="tagShape col-sm-3" (click)="selectShape('bone')">
     <img src="/assets/images/bone.svg">
   </a>
   <a class="tagShape col-sm-3" (click)="selectShape('rectangle')">
@@ -17,5 +17,42 @@
   </a>
   <a class="tagShape col-sm-3" (click)="selectShape('heart')">
     <img src="/assets/images/heart.svg">
-  </a>
+  </a>-->
+
+  <label class="tagShape col-sm-3">
+    <img src="/assets/images/bone.svg">
+    <input
+      type="radio"
+      name="shape"
+      [(ngModel)]="tagShape"
+      (change)="selectShape(tagShape)"
+      value="bone">
+  </label>
+  <label class="tagShape col-sm-3">
+    <img src="/assets/images/rectangle.svg">
+    <input
+      type="radio"
+      name="shape"
+      [(ngModel)]="tagShape"
+      (change)="selectShape(tagShape)"
+      value="rectangle">
+  </label>
+  <label class="tagShape col-sm-3">
+    <img src="/assets/images/circle.svg">
+    <input
+      type="radio"
+      name="shape"
+      [(ngModel)]="tagShape"
+      (change)="selectShape(tagShape)"
+      value="circle">
+  </label>
+  <label class="tagShape col-sm-3">
+    <img src="/assets/images/heart.svg">
+    <input
+      type="radio"
+      name="shape"
+      [(ngModel)]="tagShape"
+      (change)="selectShape(tagShape)"
+      value="heart">
+  </label>
 </div>
