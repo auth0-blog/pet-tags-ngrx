@@ -10,31 +10,32 @@ import { PetTag } from './../core/pet-tag.model';
 })
 export class TagBuilderComponent {
   tagTextInput: string = '';
+  fontType: string = 'sans-serif';
 
   constructor(private _store: Store<PetTag>) {}
 
-  selectShape(shape) {
+  selectShape(shape: string) {
     this._store.dispatch({
       type: SELECT_SHAPE,
       payload: shape
     });
   }
 
-  selectFont(font) {
+  selectFont(font: string) {
     this._store.dispatch({
       type: SELECT_FONT,
       payload: font
     });
   }
 
-  addText(text) {
+  addText(text: string) {
     this._store.dispatch({
       type: ADD_TEXT,
       payload: text
     });
   }
 
-  includeClip(clip) {
+  includeClip(clip: boolean) {
     this._store.dispatch({
       type: INCLUDE_CLIP,
       payload: clip

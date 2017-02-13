@@ -1,14 +1,16 @@
-<div *ngIf="petTag.shape">
+<div *ngIf="petTag.shape" class="row">
 
-  <div class="tagView {{petTag.shape}}">
-    <img [src]="imgSrc" />
-    <div class="text {{petTag.font}}">
-      {{petTag.text}}
+  <div class="col-sm-12">
+    <div class="tagView {{petTag.shape}}">
+      <img [src]="imgSrc" />
+      <div class="text {{petTag.font}}">
+        {{petTag.text}}
+      </div>
     </div>
-  </div>
 
-  <p>
-    <strong>Tag clip included:</strong> {{tagClipText}}
-  </p>
+    <p class="text-center">
+      <strong>Tag clip included:</strong> {{tagClipText}}
+    </p>
+  </div>
 
 </div>

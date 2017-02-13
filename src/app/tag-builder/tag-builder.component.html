@@ -1,36 +1,41 @@
-<p class="lead text-center">Create a customized name tag for your beloved pet!</p>
-
-<app-tag-view></app-tag-view>
-
-<p>
-  Select a tag shape:
-</p>
+<div class="row">
+  <p class="col-sm-12">
+    Select a tag shape:
+  </p>
+</div>
 
 <div class="row">
-  <a class="tagShape col-md-3" (click)="selectShape('bone')">
+  <a class="tagShape col-sm-3 col-xs-12" (click)="selectShape('bone')">
     <img src="/assets/images/bone.svg">
   </a>
-
-  <a class="tagShape col-md-3" (click)="selectShape('rectangle')">
+  <a class="tagShape col-sm-3 col-xs-12" (click)="selectShape('rectangle')">
     <img src="/assets/images/rectangle.svg">
   </a>
-
-  <a class="tagShape col-md-3" (click)="selectShape('circle')">
+  <a class="tagShape col-sm-3 col-xs-12" (click)="selectShape('circle')">
     <img src="/assets/images/circle.svg">
   </a>
-
-  <a class="tagShape col-md-3" (click)="selectShape('heart')">
+  <a class="tagShape col-sm-3 col-xs-12" (click)="selectShape('heart')">
     <img src="/assets/images/heart.svg">
   </a>
 </div>
 
 <div class="row">
-  Select type style: <a (click)="selectFont('sans-serif')">Sans-serif</a> | <a (click)="selectFont('serif')">Serif</a>
+  <div class="col-sm-12">
+    <label for="font">Select type style:</label>
+    <select
+      id="font"
+      name="font"
+      [(ngModel)]="fontType"
+      (change)="selectFont(fontType)">
+        <option value="sans-serif">Sans-serif</option>
+        <option value="serif">Serif</option>
+    </select>
+  </div>
 </div>
 
 <div class="row">
   <div class="col-sm-12">
-    <label for="tagText">Text:</label>
+    <label for="tagText">Tag Text:</label>
     <input
       id="tagText"
       type="text"
@@ -41,7 +46,12 @@
 </div>
 
 <div class="row">
-  <label>
-    <input type="checkbox" [(ngModel)]="tagClip" (change)="includeClip(tagClip)"> Include Clip
-  </label>
+  <div class="col-sm-12">
+    <label>
+      <input
+        type="checkbox"
+        [(ngModel)]="tagClip"
+        (change)="includeClip(tagClip)"> Include Clip
+    </label>
+  </div>
 </div>
