@@ -3,8 +3,11 @@
 <app-tag-extras *ngIf="petTag.shape"></app-tag-extras>
 
 <div class="row">
-  <button
-    class="btn btn-primary"
-    *ngIf="petTag.shape"
-    [disabled]="!finished">Finished!</button>
+  <p class="col-sm-12 text-center">
+    <button
+      class="btn btn-success btn-lg"
+      *ngIf="petTag.shape"
+      [disabled]="!done"
+      (click)="submit()">Done</button>
+  </p>
 </div>

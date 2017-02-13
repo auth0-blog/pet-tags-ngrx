@@ -11,7 +11,7 @@ import { PetTag } from './../core/pet-tag.model';
 export class TagBuilderComponent {
   tagState$: Observable<PetTag>
   petTag: PetTag;
-  finished: boolean = false;
+  done: boolean = false;
 
   constructor(private _store: Store<PetTag>) {
     this.tagState$ = _store.select('petTag');
@@ -20,11 +20,12 @@ export class TagBuilderComponent {
   ngOnInit() {
     this.tagState$.subscribe((state) => {
       this.petTag = state;
-
-      if (this.petTag.shape && this.petTag.text) {
-        this.finished = true;
-      }
+      this.done = !!(this.petTag.shape && this.petTag.text)
     });
+  }
+
+  submit() {
+    console.log('Done creating tag!', this.petTag);
   }
 
 }

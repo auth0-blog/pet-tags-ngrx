@@ -5,13 +5,15 @@ export const SELECT_SHAPE = 'SELECT_SHAPE';
 export const SELECT_FONT = 'SELECT_FONT';
 export const ADD_TEXT = 'ADD_TEXT';
 export const INCLUDE_CLIP = 'INCLUDE_CLIP';
+export const ADD_GEMS = 'ADD_GEMS';
 
 export function petTagReducer(
   state: PetTag = {
     shape: '',
     font: 'sans-serif',
     text: '',
-    clip: false
+    clip: false,
+    gems: false
   },
   action: Action) {
     switch(action.type) {
@@ -33,6 +35,11 @@ export function petTagReducer(
       case INCLUDE_CLIP: {
         return Object.assign({}, state, {
           clip: action.payload
+        });
+      }
+      case ADD_GEMS: {
+        return Object.assign({}, state, {
+          gems: action.payload
         });
       }
       default:

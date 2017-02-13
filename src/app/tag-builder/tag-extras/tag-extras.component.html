@@ -1,14 +1,26 @@
 <div class="row">
-  <h3 class="col-sm-12 text-center">Extras</h3>
+  <div class="col-sm-12 text-center">
+    <h3>Extras</h3>
+    <p class="form-text text-muted">Select any extras you would like to add.</p>
+  </div>
 </div>
 
 <div class="row">
-  <div class="col-sm-12">
+  <div class="col-sm-4 offset-sm-2">
     <label>
       <input
         type="checkbox"
         [(ngModel)]="tagClip"
         (change)="includeClip(tagClip)"> Include tag clip
+    </label>
+  </div>
+
+  <div class="col-sm-4">
+    <label>
+      <input
+        type="checkbox"
+        [(ngModel)]="gems"
+        (change)="addGems(gems)"> Add gems
     </label>
   </div>
 </div>

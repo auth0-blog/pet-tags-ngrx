@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { INCLUDE_CLIP } from './../../reducers/pet-tag.reducer';
+import { INCLUDE_CLIP, ADD_GEMS } from './../../reducers/pet-tag.reducer';
 import { PetTag } from './../../core/pet-tag.model';
 
 @Component({
@@ -16,6 +16,13 @@ export class TagExtrasComponent {
     this._store.dispatch({
       type: INCLUDE_CLIP,
       payload: clip
+    });
+  }
+
+  addGems(gems: boolean) {
+    this._store.dispatch({
+      type: INCLUDE_CLIP,
+      payload: gems
     });
   }
 

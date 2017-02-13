@@ -13,6 +13,7 @@ export class TagViewComponent implements OnInit {
   petTag: PetTag;
   imgSrc: string = '';
   tagClipText: string;
+  gemsText: string;
 
   constructor(private _store: Store<PetTag>) {
     this.tagState$ = _store.select('petTag');
@@ -22,8 +23,13 @@ export class TagViewComponent implements OnInit {
     this.tagState$.subscribe((state) => {
       this.petTag = state;
       this.imgSrc = `/assets/images/${this.petTag.shape}.svg`;
-      this.tagClipText = this.petTag.clip ? 'Yes' : 'No';
+      this.tagClipText = this._boolToText(this.petTag.clip);
+      this.gemsText = this._boolToText(this.petTag.gems);
     });
+  }
+
+  private _boolToText(bool: boolean) {
+    return bool ? 'Yes' : 'No';
   }
 
 }
