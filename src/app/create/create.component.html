@@ -1,0 +1,24 @@
+<p class="col-sm-12 text-center lead">
+  Hello, {{auth.userProfile.name}}! Create a customized tag for your pet.
+</p>
+
+<app-tag-builder></app-tag-builder>
+<app-tag-preview></app-tag-preview>
+
+<div class="row">
+  <div class="col-sm-12 text-center">
+    <p class="form-text text-muted" *ngIf="petTag.shape">
+      Preview your customized tag above.<br>
+      If you're happy with the results,<br>
+      click the button below to finish!
+    </p>
+    <p>
+      <button
+        class="btn btn-success btn-lg"
+        *ngIf="petTag.shape"
+        [disabled]="!done"
+        (click)="submit()"
+        routerLink="/complete">Done</button>
+    </p>
+  </div>
+</div>

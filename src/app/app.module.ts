@@ -16,6 +16,7 @@ import { TagTextComponent } from './tag-builder/tag-text/tag-text.component';
 import { TagExtrasComponent } from './tag-builder/tag-extras/tag-extras.component';
 import { HomeComponent } from './home/home.component';
 import { CompleteComponent } from './complete/complete.component';
+import { CreateComponent } from './create/create.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { CompleteComponent } from './complete/complete.component';
     TagTextComponent,
     TagExtrasComponent,
     HomeComponent,
-    CompleteComponent
+    CompleteComponent,
+    CreateComponent
   ],
   imports: [
     BrowserModule,

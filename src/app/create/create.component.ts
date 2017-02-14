@@ -1,26 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
-import { RESET } from './../core/pet-tag.reducer';
+import { COMPLETE } from './../core/pet-tag.reducer';
 import { PetTag } from './../core/pet-tag.model';
 import { AuthService } from './../core/auth.service';
 
 @Component({
-  selector: 'app-complete',
-  templateUrl: './complete.component.html',
-  styleUrls: ['./complete.component.css']
+  selector: 'app-create',
+  templateUrl: './create.component.html',
+  styleUrls: ['./create.component.css']
 })
-export class CompleteComponent implements OnInit {
+export class CreateComponent implements OnInit {
   tagState$: Observable<PetTag>
   petTag: PetTag;
-  emptyTag: PetTag = {
-    shape: '',
-    font: 'sans-serif',
-    text: '',
-    clip: false,
-    gems: false,
-    complete: false
-  };
+  done: boolean = false;
 
   constructor(private store: Store<PetTag>, private auth: AuthService) {
     this.tagState$ = store.select('petTag');
@@ -29,13 +22,14 @@ export class CompleteComponent implements OnInit {
   ngOnInit() {
     this.tagState$.subscribe((state) => {
       this.petTag = state;
+      this.done = !!(this.petTag.shape && this.petTag.text)
     });
   }
 
-  newTag() {
+  submit() {
     this.store.dispatch({
-      type: RESET,
-      payload: this.emptyTag
+      type: COMPLETE,
+      payload: true
     });
   }
 

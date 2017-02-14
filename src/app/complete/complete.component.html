@@ -1,7 +1,7 @@
 <div *ngIf="petTag.complete">
   <div class="row">
     <p class="col-sm-12 alert alert-success">
-      <strong>Congratulations!</strong> You've completed a pet ID tag for <strong>{{petTag.text}}</strong>. Would you like to <a (click)="newTag()" routerLink="/" class="alert-link">create another?</a>
+      <strong>Congratulations, {{auth.userProfile.name}}!</strong> You've completed a pet ID tag for <strong>{{petTag.text}}</strong>. Would you like to <a (click)="newTag()" routerLink="/create" class="alert-link">create another?</a>
     </p>
   </div>
 
@@ -10,6 +10,12 @@
 
 <div *ngIf="!petTag.complete" class="row">
   <p class="col-sm-12 alert alert-danger">
-    <strong>Oops!</strong> You haven't customized a tag yet. <a routerLink="/" class="alert-link">Click here to create one now.</a>
+    <strong>Oops!</strong> You haven't customized a tag yet. <a routerLink="/create" class="alert-link">Click here to create one now.</a>
+  </p>
+</div>
+
+<div class="row">
+  <p class="col-sm-12 text-center">
+    <a class="btn btn-danger btn-lg" routerLink="/" (click)="auth.logout()">Log Out</a>
   </p>
 </div>
