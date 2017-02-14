@@ -16,7 +16,7 @@ export class TagBuilderComponent {
   }
 
   ngOnInit() {
-    this.tagState$.subscribe((state) => {
+    this.tagState$.subscribe((state: PetTag) => {
       this.petTag = state;
     });
   }

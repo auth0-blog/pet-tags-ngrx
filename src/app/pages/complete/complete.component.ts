@@ -26,7 +26,7 @@ export class CompleteComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.tagState$.subscribe((state) => {
+    this.tagState$.subscribe((state: PetTag) => {
       this.petTag = state;
     });
   }
