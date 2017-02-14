@@ -1,11 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { AuthService } from './auth.service';
 import { AuthGuard } from './auth.guard';
 
-import { HomeComponent } from '../home/home.component';
-import { CreateComponent } from './../create/create.component';
-import { CompleteComponent } from './../complete/complete.component';
+import { HomeComponent } from '../pages/home/home.component';
+import { CreateComponent } from './../pages/create/create.component';
+import { CompleteComponent } from './../pages/complete/complete.component';
 
 @NgModule({
   imports: [
@@ -36,7 +35,6 @@ import { CompleteComponent } from './../complete/complete.component';
     ])
   ],
   providers: [
-    AuthService,
     AuthGuard
   ],
   exports: [

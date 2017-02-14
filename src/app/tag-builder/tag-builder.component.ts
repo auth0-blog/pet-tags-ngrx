@@ -5,8 +5,7 @@ import { PetTag } from './../core/pet-tag.model';
 
 @Component({
   selector: 'app-tag-builder',
-  templateUrl: './tag-builder.component.html',
-  styleUrls: ['./tag-builder.component.css']
+  templateUrl: './tag-builder.component.html'
 })
 export class TagBuilderComponent {
   tagState$: Observable<PetTag>

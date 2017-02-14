@@ -1,14 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
-import { RESET } from './../core/pet-tag.reducer';
-import { PetTag } from './../core/pet-tag.model';
-import { AuthService } from './../core/auth.service';
+import { RESET } from './../../core/pet-tag.reducer';
+import { PetTag } from './../../core/pet-tag.model';
+import { AuthService } from './../../core/auth.service';
 
 @Component({
   selector: 'app-complete',
-  templateUrl: './complete.component.html',
-  styleUrls: ['./complete.component.css']
+  templateUrl: './complete.component.html'
 })
 export class CompleteComponent implements OnInit {
   tagState$: Observable<PetTag>

@@ -28,7 +28,6 @@ export class AuthService {
           if (error) {
             throw Error('There was an error retrieving profile data.');
           }
-
           localStorage.setItem('profile', JSON.stringify(profile));
           this.userProfile = profile;
           this.router.navigate(['/create']);

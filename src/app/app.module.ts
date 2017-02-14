@@ -14,9 +14,9 @@ import { TagPreviewComponent } from './tag-preview/tag-preview.component';
 import { TagShapeComponent } from './tag-builder/tag-shape/tag-shape.component';
 import { TagTextComponent } from './tag-builder/tag-text/tag-text.component';
 import { TagExtrasComponent } from './tag-builder/tag-extras/tag-extras.component';
-import { HomeComponent } from './home/home.component';
-import { CompleteComponent } from './complete/complete.component';
-import { CreateComponent } from './create/create.component';
+import { HomeComponent } from './pages/home/home.component';
+import { CompleteComponent } from './pages/complete/complete.component';
+import { CreateComponent } from './pages/create/create.component';
 
 @NgModule({
   declarations: [
