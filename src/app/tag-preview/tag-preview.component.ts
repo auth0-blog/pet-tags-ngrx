@@ -20,7 +20,7 @@ export class TagPreviewComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.tagState$.subscribe((state: PetTag) => {
+    this.tagState$.subscribe((state) => {
       this.petTag = state;
       this.imgSrc = `/assets/images/${this.petTag.shape}.svg`;
       this.tagClipText = this.boolToText(this.petTag.clip);

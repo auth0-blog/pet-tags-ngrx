@@ -19,7 +19,7 @@ export class CreateComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.tagState$.subscribe((state: PetTag) => {
+    this.tagState$.subscribe((state) => {
       this.petTag = state;
       this.done = !!(this.petTag.shape && this.petTag.text)
     });
