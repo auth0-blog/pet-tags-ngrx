@@ -30,6 +30,8 @@ export class AuthService {
           }
           localStorage.setItem('profile', JSON.stringify(profile));
           this.userProfile = profile;
+
+          // On successful authentication and profile retrieval, go to /create route
           this.router.navigate(['/create']);
         });
       } else if (authResult && !authResult.idToken) {
@@ -40,18 +42,15 @@ export class AuthService {
   }
 
   login() {
-    // Call the show method to display the Lock widget
     this.lock.show();
   }
 
   logout() {
-    // Remove token and profile
     localStorage.removeItem('id_token');
     localStorage.removeItem('profile');
   }
 
   get authenticated() {
-    // Check if there's an unexpired JWT
     // This searches for an item in localStorage with key == 'id_token'
     return tokenNotExpired();
   }

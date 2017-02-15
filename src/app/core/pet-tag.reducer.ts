@@ -1,6 +1,7 @@
-import { ActionReducer, Action } from '@ngrx/store';
+import { Action } from '@ngrx/store';
 import { PetTag } from './../core/pet-tag.model';
 
+// Export action types
 export const SELECT_SHAPE = 'SELECT_SHAPE';
 export const SELECT_FONT = 'SELECT_FONT';
 export const ADD_TEXT = 'ADD_TEXT';
@@ -9,6 +10,7 @@ export const ADD_GEMS = 'ADD_GEMS';
 export const COMPLETE = 'COMPLETE';
 export const RESET = 'RESET';
 
+// Create pet tag reducer function
 export function petTagReducer(
     state: PetTag = {
     shape: '',
@@ -20,39 +22,32 @@ export function petTagReducer(
   },
   action: Action) {
     switch(action.type) {
-      case SELECT_SHAPE: {
+      case SELECT_SHAPE:
         return Object.assign({}, state, {
           shape: action.payload
         });
-      }
-      case SELECT_FONT: {
+      case SELECT_FONT:
         return Object.assign({}, state, {
           font: action.payload
         });
-      }
-      case ADD_TEXT: {
+      case ADD_TEXT:
         return Object.assign({}, state, {
           text: action.payload
         });
-      }
-      case INCLUDE_CLIP: {
+      case INCLUDE_CLIP:
         return Object.assign({}, state, {
           clip: action.payload
         });
-      }
-      case ADD_GEMS: {
+      case ADD_GEMS:
         return Object.assign({}, state, {
           gems: action.payload
         });
-      }
-      case COMPLETE: {
+      case COMPLETE:
         return Object.assign({}, state, {
           complete: action.payload
         });
-      }
-      case RESET: {
+      case RESET:
         return Object.assign({}, state, action.payload);
-      }
       default:
         return state;
   }
