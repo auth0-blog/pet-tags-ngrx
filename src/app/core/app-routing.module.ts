@@ -29,7 +29,7 @@ import { CompleteComponent } from './../pages/complete/complete.component';
       },
       {
         path: '**',
-        redirectTo: '/',
+        redirectTo: '',
         pathMatch: 'full'
       }
     ])
