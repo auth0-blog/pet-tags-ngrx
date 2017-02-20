@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { INCLUDE_CLIP, ADD_GEMS } from './../../core/pet-tag.reducer';
+import { INCLUDE_CLIP, ADD_GEMS } from './../../core/pet-tag.actions';
 import { PetTag } from './../../core/pet-tag.model';
 
 @Component({

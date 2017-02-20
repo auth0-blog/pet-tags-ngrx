@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
-import { RESET } from './../../core/pet-tag.reducer';
+import { RESET } from './../../core/pet-tag.actions';
 import { PetTag, initialTag } from './../../core/pet-tag.model';
 import { AuthService } from './../../core/auth.service';
 

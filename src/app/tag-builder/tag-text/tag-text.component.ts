@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { SELECT_FONT, ADD_TEXT } from './../../core/pet-tag.reducer';
+import { SELECT_FONT, ADD_TEXT } from './../../core/pet-tag.actions';
 import { PetTag } from './../../core/pet-tag.model';
 
 @Component({
