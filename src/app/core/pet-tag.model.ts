@@ -1,4 +1,4 @@
-interface PetTag {
+export interface PetTag {
   shape: string;
   font: string;
   text: string;
@@ -7,7 +7,7 @@ interface PetTag {
   complete: false;
 };
 
-const initialTag: PetTag = {
+export const initialTag: PetTag = {
   shape: '',
   font: 'sans-serif',
   text: '',
@@ -15,5 +15,3 @@ const initialTag: PetTag = {
   gems: false,
   complete: false
 };
-
-export { PetTag, initialTag };
