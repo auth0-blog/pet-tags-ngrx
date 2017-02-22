@@ -1,8 +1,8 @@
-import { SELECT_SHAPE, SELECT_FONT, ADD_TEXT, INCLUDE_CLIP, ADD_GEMS, COMPLETE, RESET } from './pet-tag.actions';
 import { Action } from '@ngrx/store';
 import { PetTag, initialTag } from './../core/pet-tag.model';
+import { SELECT_SHAPE, SELECT_FONT, ADD_TEXT, INCLUDE_CLIP, ADD_GEMS, COMPLETE, RESET } from './pet-tag.actions';
 
-// Create pet tag reducer
+// Create pet tag reducer function
 export function petTagReducer(state: PetTag = initialTag, action: Action) {
   switch(action.type) {
     case SELECT_SHAPE:
