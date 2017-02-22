@@ -3,7 +3,7 @@ import { Action } from '@ngrx/store';
 import { PetTag, initialTag } from './../core/pet-tag.model';
 
 // Create pet tag reducer
-export const petTagReducer = (state: PetTag = initialTag, action: Action) => {
+export function petTagReducer(state: PetTag = initialTag, action: Action) {
   switch(action.type) {
     case SELECT_SHAPE:
       return Object.assign({}, state, {
