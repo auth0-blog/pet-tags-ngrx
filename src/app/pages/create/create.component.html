@@ -2,7 +2,19 @@
   Hello, {{auth.userProfile.name}}! Create a customized tag for your pet.
 </p>
 
-<app-tag-builder></app-tag-builder>
+<app-tag-shape
+  (selectShapeEvent)="selectShapeHandler($event)"></app-tag-shape>
+
+<app-tag-text
+  *ngIf="petTag.shape"
+  (selectFontEvent)="selectFontHandler($event)"
+  (addTextEvent)="addTextHandler($event)"></app-tag-text>
+
+<app-tag-extras
+  *ngIf="petTag.shape"
+  (includeClipEvent)="includeClipHandler($event)"
+  (addGemsEvent)="addGemsHandler($event)"></app-tag-extras>
+
 <app-tag-preview [petTag]="petTag"></app-tag-preview>
 
 <div class="row">

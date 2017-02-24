@@ -9,7 +9,6 @@ import { petTagReducer } from './core/pet-tag.reducer';
 import { AuthService } from './core/auth.service';
 
 import { AppComponent } from './core/app.component';
-import { TagBuilderComponent } from './tag-builder/tag-builder.component';
 import { TagPreviewComponent } from './tag-preview/tag-preview.component';
 import { TagShapeComponent } from './tag-builder/tag-shape/tag-shape.component';
 import { TagTextComponent } from './tag-builder/tag-text/tag-text.component';
@@ -21,7 +20,6 @@ import { CreateComponent } from './pages/create/create.component';
 @NgModule({
   declarations: [
     AppComponent,
-    TagBuilderComponent,
     TagPreviewComponent,
     TagShapeComponent,
     TagTextComponent,

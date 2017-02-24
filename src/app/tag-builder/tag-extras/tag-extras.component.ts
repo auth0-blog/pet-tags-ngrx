@@ -1,7 +1,4 @@
-import { Component } from '@angular/core';
-import { Store } from '@ngrx/store';
-import { INCLUDE_CLIP, ADD_GEMS } from './../../core/pet-tag.actions';
-import { PetTag } from './../../core/pet-tag.model';
+import { Component, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-tag-extras',
@@ -9,21 +6,16 @@ import { PetTag } from './../../core/pet-tag.model';
   styleUrls: ['./tag-extras.component.css']
 })
 export class TagExtrasComponent {
+  @Output() includeClipEvent = new EventEmitter;
+  @Output() addGemsEvent = new EventEmitter;
 
-  constructor(private store: Store<PetTag>) { }
+  constructor() { }
 
   includeClip(clip: boolean) {
-    this.store.dispatch({
-      type: INCLUDE_CLIP,
-      payload: clip
-    });
+    this.includeClipEvent.emit(clip);
   }
 
   addGems(gems: boolean) {
-    this.store.dispatch({
-      type: ADD_GEMS,
-      payload: gems
-    });
+    this.addGemsEvent.emit(gems);
   }
-
 }

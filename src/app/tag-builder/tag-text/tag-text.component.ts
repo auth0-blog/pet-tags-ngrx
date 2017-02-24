@@ -1,7 +1,4 @@
-import { Component } from '@angular/core';
-import { Store } from '@ngrx/store';
-import { SELECT_FONT, ADD_TEXT } from './../../core/pet-tag.actions';
-import { PetTag } from './../../core/pet-tag.model';
+import { Component, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-tag-text',
@@ -9,23 +6,19 @@ import { PetTag } from './../../core/pet-tag.model';
   styleUrls: ['./tag-text.component.css']
 })
 export class TagTextComponent {
+  @Output() selectFontEvent = new EventEmitter;
+  @Output() addTextEvent = new EventEmitter;
   tagTextInput: string = '';
   fontType: string = 'sans-serif';
 
-  constructor(private store: Store<PetTag>) {}
+  constructor() { }
 
-  selectFont(font: string) {
-    this.store.dispatch({
-      type: SELECT_FONT,
-      payload: font
-    });
+  selectFont(fontType: string) {
+    this.selectFontEvent.emit(fontType);
   }
 
   addText(text: string) {
-    this.store.dispatch({
-      type: ADD_TEXT,
-      payload: text
-    });
+    this.addTextEvent.emit(text);
   }
 
 }

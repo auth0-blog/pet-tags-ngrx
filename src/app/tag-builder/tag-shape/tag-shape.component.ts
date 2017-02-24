@@ -1,7 +1,4 @@
-import { Component } from '@angular/core';
-import { Store } from '@ngrx/store';
-import { SELECT_SHAPE } from './../../core/pet-tag.actions';
-import { PetTag } from './../../core/pet-tag.model';
+import { Component, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-tag-shape',
@@ -9,14 +6,12 @@ import { PetTag } from './../../core/pet-tag.model';
   styleUrls: ['./tag-shape.component.css']
 })
 export class TagShapeComponent {
+  @Output() selectShapeEvent = new EventEmitter();
 
-  constructor(private store: Store<PetTag>) { }
+  constructor() { }
 
   selectShape(shape: string) {
-    this.store.dispatch({
-      type: SELECT_SHAPE,
-      payload: shape
-    });
+    this.selectShapeEvent.emit(shape);
   }
 
 }
