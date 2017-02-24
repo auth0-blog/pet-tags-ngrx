@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { PetTag } from './../core/pet-tag.model';
@@ -7,8 +7,9 @@ import { PetTag } from './../core/pet-tag.model';
   selector: 'app-tag-builder',
   templateUrl: './tag-builder.component.html'
 })
-export class TagBuilderComponent {
-  tagState$: Observable<PetTag>
+export class TagBuilderComponent implements OnInit, OnDestroy {
+  tagState$: Observable<PetTag>;
+  tagStateSubscription;
   petTag: PetTag;
 
   constructor(private store: Store<PetTag>) {
@@ -16,9 +17,13 @@ export class TagBuilderComponent {
   }
 
   ngOnInit() {
-    this.tagState$.subscribe((state) => {
+    this.tagStateSubscription = this.tagState$.subscribe((state) => {
       this.petTag = state;
     });
+  }
+
+  ngOnDestroy() {
+    this.tagStateSubscription.unsubscribe();
   }
 
 }

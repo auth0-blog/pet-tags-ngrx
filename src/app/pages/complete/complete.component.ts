@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { RESET } from './../../core/pet-tag.actions';
@@ -9,8 +9,9 @@ import { AuthService } from './../../core/auth.service';
   selector: 'app-complete',
   templateUrl: './complete.component.html'
 })
-export class CompleteComponent implements OnInit {
-  tagState$: Observable<PetTag>
+export class CompleteComponent implements OnInit, OnDestroy {
+  tagState$: Observable<PetTag>;
+  tagStateSubscription;
   petTag: PetTag;
   emptyTag: PetTag = initialTag;
 
@@ -19,9 +20,13 @@ export class CompleteComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.tagState$.subscribe((state) => {
+    this.tagStateSubscription = this.tagState$.subscribe((state) => {
       this.petTag = state;
     });
+  }
+
+  ngOnDestroy() {
+    this.tagStateSubscription.unsubscribe();
   }
 
   newTag() {
