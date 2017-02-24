@@ -9,24 +9,25 @@ import { petTagReducer } from './core/pet-tag.reducer';
 import { AuthService } from './core/auth.service';
 
 import { AppComponent } from './core/app.component';
-import { TagPreviewComponent } from './tag-preview/tag-preview.component';
-import { TagShapeComponent } from './tag-builder/tag-shape/tag-shape.component';
-import { TagTextComponent } from './tag-builder/tag-text/tag-text.component';
-import { TagExtrasComponent } from './tag-builder/tag-extras/tag-extras.component';
 import { HomeComponent } from './pages/home/home.component';
-import { CompleteComponent } from './pages/complete/complete.component';
 import { CreateComponent } from './pages/create/create.component';
+import { CompleteComponent } from './pages/complete/complete.component';
+
+import { TagShapeComponent } from './pages/create/tag-shape/tag-shape.component';
+import { TagTextComponent } from './pages/create/tag-text/tag-text.component';
+import { TagExtrasComponent } from './pages/create/tag-extras/tag-extras.component';
+import { TagPreviewComponent } from './tag-preview/tag-preview.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TagPreviewComponent,
+    HomeComponent,
+    CreateComponent,
+    CompleteComponent,
     TagShapeComponent,
     TagTextComponent,
     TagExtrasComponent,
-    HomeComponent,
-    CompleteComponent,
-    CreateComponent
+    TagPreviewComponent,
   ],
   imports: [
     BrowserModule,
