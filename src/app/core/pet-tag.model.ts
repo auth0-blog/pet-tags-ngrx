@@ -4,7 +4,7 @@ export interface PetTag {
   text: string;
   clip: boolean;
   gems: boolean;
-  complete: false;
+  complete: boolean;
 };
 
 export const initialTag: PetTag = {
