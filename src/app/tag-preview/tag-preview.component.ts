@@ -1,6 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Observable } from 'rxjs';
-import { Store } from '@ngrx/store';
+import { Component, OnChanges, Input } from '@angular/core';
 import { PetTag } from './../core/pet-tag.model';
 
 @Component({
@@ -8,29 +6,18 @@ import { PetTag } from './../core/pet-tag.model';
   templateUrl: './tag-preview.component.html',
   styleUrls: ['./tag-preview.component.css']
 })
-export class TagPreviewComponent implements OnInit, OnDestroy {
-  tagState$: Observable<PetTag>;
-  tagStateSubscription;
-  petTag: PetTag;
+export class TagPreviewComponent implements OnChanges {
+  @Input() petTag: PetTag;
   imgSrc: string = '';
   tagClipText: string;
   gemsText: string;
 
-  constructor(private store: Store<PetTag>) {
-    this.tagState$ = store.select('petTag');
-  }
+  constructor() {}
 
-  ngOnInit() {
-    this.tagStateSubscription = this.tagState$.subscribe((state) => {
-      this.petTag = state;
-      this.imgSrc = `/assets/images/${this.petTag.shape}.svg`;
-      this.tagClipText = this.boolToText(this.petTag.clip);
-      this.gemsText = this.boolToText(this.petTag.gems);
-    });
-  }
-
-  ngOnDestroy() {
-    this.tagStateSubscription.unsubscribe();
+  ngOnChanges() {
+    this.imgSrc = `/assets/images/${this.petTag.shape}.svg`;
+    this.tagClipText = this.boolToText(this.petTag.clip);
+    this.gemsText = this.boolToText(this.petTag.gems);
   }
 
   private boolToText(bool: boolean) {

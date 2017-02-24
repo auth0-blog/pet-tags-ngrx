@@ -11,7 +11,7 @@ import { AuthService } from './../../core/auth.service';
 })
 export class CreateComponent implements OnInit, OnDestroy {
   tagState$: Observable<PetTag>;
-  tagStateSubscription;
+  private tagStateSubscription;
   petTag: PetTag;
   done: boolean = false;
 

@@ -9,7 +9,7 @@ import { PetTag } from './../core/pet-tag.model';
 })
 export class TagBuilderComponent implements OnInit, OnDestroy {
   tagState$: Observable<PetTag>;
-  tagStateSubscription;
+  private tagStateSubscription;
   petTag: PetTag;
 
   constructor(private store: Store<PetTag>) {
