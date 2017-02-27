@@ -4,6 +4,7 @@ import { tokenNotExpired } from 'angular2-jwt';
 
 // Avoid name not found warnings
 declare var Auth0Lock: any;
+declare var localStorage: any;
 
 @Injectable()
 export class AuthService {
@@ -50,7 +51,7 @@ export class AuthService {
     localStorage.removeItem('profile');
   }
 
-  get authenticated() {
+  authenticated() {
     // This searches for an item in localStorage with key == 'id_token'
     return tokenNotExpired();
   }
