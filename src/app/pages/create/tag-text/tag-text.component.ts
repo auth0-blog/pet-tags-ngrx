@@ -8,8 +8,8 @@ import { Component, Output, EventEmitter } from '@angular/core';
 export class TagTextComponent {
   @Output() selectFontEvent = new EventEmitter;
   @Output() addTextEvent = new EventEmitter;
-  tagTextInput: string = '';
-  fontType: string = 'sans-serif';
+  tagTextInput = '';
+  fontType = 'sans-serif';
 
   constructor() { }
 

@@ -3,7 +3,7 @@ import { PetTag, initialTag } from './../core/pet-tag.model';
 import { SELECT_SHAPE, SELECT_FONT, ADD_TEXT, INCLUDE_CLIP, ADD_GEMS, COMPLETE, RESET } from './pet-tag.actions';
 
 export function petTagReducer(state: PetTag = initialTag, action: Action) {
-  switch(action.type) {
+  switch (action.type) {
     case SELECT_SHAPE:
       return Object.assign({}, state, {
         shape: action.payload

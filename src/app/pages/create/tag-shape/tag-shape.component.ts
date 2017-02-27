@@ -6,6 +6,8 @@ import { Component, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./tag-shape.component.css']
 })
 export class TagShapeComponent {
+  tagShape: string;
+
   @Output() selectShapeEvent = new EventEmitter();
 
   constructor() { }

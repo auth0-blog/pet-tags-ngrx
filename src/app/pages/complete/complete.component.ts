@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable } from 'rxjs/Observable';
 import { Store } from '@ngrx/store';
 import { RESET } from './../../core/pet-tag.actions';
 import { PetTag, initialTag } from './../../core/pet-tag.model';
@@ -15,7 +15,7 @@ export class CompleteComponent implements OnInit, OnDestroy {
   petTag: PetTag;
   emptyTag: PetTag = initialTag;
 
-  constructor(private store: Store<PetTag>, private auth: AuthService) {
+  constructor(private store: Store<PetTag>, public auth: AuthService) {
     this.tagState$ = store.select('petTag');
   }
 

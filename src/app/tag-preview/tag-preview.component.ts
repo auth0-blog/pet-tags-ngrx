@@ -8,7 +8,7 @@ import { PetTag } from './../core/pet-tag.model';
 })
 export class TagPreviewComponent implements OnChanges {
   @Input() petTag: PetTag;
-  imgSrc: string = '';
+  imgSrc = '';
   tagClipText: string;
   gemsText: string;
 
