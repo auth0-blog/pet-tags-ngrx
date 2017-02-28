@@ -7,7 +7,6 @@ import { Component, Output, EventEmitter } from '@angular/core';
 })
 export class TagShapeComponent {
   tagShape: string;
-
   @Output() selectShapeEvent = new EventEmitter();
 
   constructor() { }

@@ -6,10 +6,10 @@ import { Component, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./tag-text.component.css']
 })
 export class TagTextComponent {
-  @Output() selectFontEvent = new EventEmitter;
-  @Output() addTextEvent = new EventEmitter;
   tagTextInput = '';
   fontType = 'sans-serif';
+  @Output() selectFontEvent = new EventEmitter;
+  @Output() addTextEvent = new EventEmitter;
 
   constructor() { }
 
