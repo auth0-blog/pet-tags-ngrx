@@ -27,7 +27,7 @@ import { TagPreviewComponent } from './tag-preview/tag-preview.component';
     TagShapeComponent,
     TagTextComponent,
     TagExtrasComponent,
-    TagPreviewComponent,
+    TagPreviewComponent
   ],
   imports: [
     BrowserModule,

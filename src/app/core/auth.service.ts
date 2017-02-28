@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { tokenNotExpired } from 'angular2-jwt';
 
-// Avoid name not found warnings
+// avoid name not found warnings
 declare var Auth0Lock: any;
 declare var localStorage: any;
 
@@ -19,12 +19,12 @@ export class AuthService {
   constructor(private router: Router) {
     this.userProfile = JSON.parse(localStorage.getItem('profile'));
 
-    // Add callback for lock 'hash_parsed' event
+    // add callback for lock 'hash_parsed' event
     this.lock.on('hash_parsed', (authResult) => {
       if (authResult && authResult.idToken) {
         localStorage.setItem('id_token', authResult.idToken);
 
-        // Get user profile
+        // get user profile
         this.lock.getProfile(authResult.idToken, (error, profile) => {
           if (error) {
             throw Error('There was an error retrieving profile data.');
@@ -32,11 +32,11 @@ export class AuthService {
           localStorage.setItem('profile', JSON.stringify(profile));
           this.userProfile = profile;
 
-          // On successful authentication and profile retrieval, go to /create route
+          // on successful authentication and profile retrieval, go to /create route
           this.router.navigate(['/create']);
         });
       } else if (authResult && !authResult.idToken) {
-        // Authentication failed
+        // authentication failed
         throw Error(`There was an error authenticating: ${authResult}`);
       }
     });
@@ -52,7 +52,7 @@ export class AuthService {
   }
 
   authenticated() {
-    // This searches for an item in localStorage with key == 'id_token'
+    // search for an item in localStorage with key == 'id_token'
     return tokenNotExpired();
   }
 
