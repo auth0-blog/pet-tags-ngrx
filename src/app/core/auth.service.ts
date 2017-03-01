@@ -8,8 +8,7 @@ declare var localStorage: any;
 
 @Injectable()
 export class AuthService {
-  lock = new Auth0Lock('IC85yTY3RtaobH5A44gQV2PUhfsnqPNO', 'kmaida.auth0.com', {
-  // lock = new Auth0Lock('[CLIENT_ID]', '[CLIENT_DOMAIN]', {
+  lock = new Auth0Lock('[CLIENT_ID]', '[CLIENT_DOMAIN]', {
     auth: {
       redirectUrl: 'http://localhost:4200',
       responseType: 'token'
