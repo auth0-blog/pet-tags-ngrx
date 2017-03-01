@@ -12,8 +12,8 @@
 
 <app-tag-extras
   *ngIf="petTag.shape"
-  (includeClipEvent)="includeClipHandler()"
-  (addGemsEvent)="addGemsHandler()"></app-tag-extras>
+  (toggleClipEvent)="toggleClipHandler()"
+  (toggleGemsEvent)="toggleGemsHandler()"></app-tag-extras>
 
 <app-tag-preview
   [petTag]="petTag"></app-tag-preview>

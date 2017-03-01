@@ -8,16 +8,16 @@ import { Component, Output, EventEmitter } from '@angular/core';
 export class TagExtrasComponent {
   tagClip: boolean;
   gems: boolean;
-  @Output() includeClipEvent = new EventEmitter;
-  @Output() addGemsEvent = new EventEmitter;
+  @Output() toggleClipEvent = new EventEmitter;
+  @Output() toggleGemsEvent = new EventEmitter;
 
   constructor() { }
 
-  includeClip() {
-    this.includeClipEvent.emit();
+  toggleClip() {
+    this.toggleClipEvent.emit();
   }
 
-  addGems() {
-    this.addGemsEvent.emit();
+  toggleGems() {
+    this.toggleGemsEvent.emit();
   }
 }

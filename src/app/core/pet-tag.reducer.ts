@@ -1,6 +1,6 @@
 import { Action } from '@ngrx/store';
 import { PetTag, initialTag } from './../core/pet-tag.model';
-import { SELECT_SHAPE, SELECT_FONT, ADD_TEXT, INCLUDE_CLIP, ADD_GEMS, COMPLETE, RESET } from './pet-tag.actions';
+import { SELECT_SHAPE, SELECT_FONT, ADD_TEXT, TOGGLE_CLIP, TOGGLE_GEMS, COMPLETE, RESET } from './pet-tag.actions';
 
 export function petTagReducer(state: PetTag = initialTag, action: Action) {
   switch (action.type) {
@@ -16,11 +16,11 @@ export function petTagReducer(state: PetTag = initialTag, action: Action) {
       return Object.assign({}, state, {
         text: action.payload
       });
-    case INCLUDE_CLIP:
+    case TOGGLE_CLIP:
       return Object.assign({}, state, {
         clip: !state.clip
       });
-    case ADD_GEMS:
+    case TOGGLE_GEMS:
       return Object.assign({}, state, {
         gems: !state.gems
       });
