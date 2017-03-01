@@ -52,17 +52,15 @@ export class CreateComponent implements OnInit, OnDestroy {
     });
   }
 
-  includeClipHandler(clip: boolean) {
+  includeClipHandler() {
     this.store.dispatch({
-      type: INCLUDE_CLIP,
-      payload: clip
+      type: INCLUDE_CLIP
     });
   }
 
-  addGemsHandler(gems: boolean) {
+  addGemsHandler() {
     this.store.dispatch({
-      type: ADD_GEMS,
-      payload: gems
+      type: ADD_GEMS
     });
   }
 

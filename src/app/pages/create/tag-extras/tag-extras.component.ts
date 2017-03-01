@@ -13,11 +13,11 @@ export class TagExtrasComponent {
 
   constructor() { }
 
-  includeClip(clip: boolean) {
-    this.includeClipEvent.emit(clip);
+  includeClip() {
+    this.includeClipEvent.emit();
   }
 
-  addGems(gems: boolean) {
-    this.addGemsEvent.emit(gems);
+  addGems() {
+    this.addGemsEvent.emit();
   }
 }

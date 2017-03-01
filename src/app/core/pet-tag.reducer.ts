@@ -18,11 +18,11 @@ export function petTagReducer(state: PetTag = initialTag, action: Action) {
       });
     case INCLUDE_CLIP:
       return Object.assign({}, state, {
-        clip: action.payload
+        clip: !state.clip
       });
     case ADD_GEMS:
       return Object.assign({}, state, {
-        gems: action.payload
+        gems: !state.gems
       });
     case COMPLETE:
       return Object.assign({}, state, {
