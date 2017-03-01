@@ -9,6 +9,7 @@
     "experimentalDecorators": true,
     "lib": [
       "es2016"
-    ]
+    ],
+    "target": "es5"
   }
 }
