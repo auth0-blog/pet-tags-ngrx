@@ -1,5 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
+import { Subscription } from 'rxjs/Subscription';
 import { Store } from '@ngrx/store';
 import { SELECT_SHAPE, SELECT_FONT, ADD_TEXT, INCLUDE_CLIP, ADD_GEMS, COMPLETE } from './../../core/pet-tag.actions';
 import { PetTag } from './../../core/pet-tag.model';
@@ -11,7 +12,7 @@ import { AuthService } from './../../core/auth.service';
 })
 export class CreateComponent implements OnInit, OnDestroy {
   tagState$: Observable<PetTag>;
-  private tagStateSubscription;
+  private tagStateSubscription: Subscription;
   petTag: PetTag;
   done = false;
 

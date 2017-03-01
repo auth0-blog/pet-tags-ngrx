@@ -1,5 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
+import { Subscription } from 'rxjs/Subscription';
 import { Store } from '@ngrx/store';
 import { RESET } from './../../core/pet-tag.actions';
 import { PetTag, initialTag } from './../../core/pet-tag.model';
@@ -11,7 +12,7 @@ import { AuthService } from './../../core/auth.service';
 })
 export class CompleteComponent implements OnInit, OnDestroy {
   tagState$: Observable<PetTag>;
-  private tagStateSubscription;
+  private tagStateSubscription: Subscription;
   petTag: PetTag;
   emptyTag: PetTag = initialTag;
 
