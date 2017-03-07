@@ -36,8 +36,9 @@ export class AuthService {
           this.router.navigate(['/create']);
         });
       } else if (authResult && !authResult.idToken) {
-        // authentication failed
-        throw Error(`There was an error authenticating: ${authResult}`);
+        // authentication failed: show Lock widget and log a warning
+        this.login();
+        console.warn(`There was an error authenticating: ${authResult}`);
       }
     });
   }

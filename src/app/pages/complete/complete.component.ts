@@ -3,7 +3,7 @@ import { Observable } from 'rxjs/Observable';
 import { Subscription } from 'rxjs/Subscription';
 import { Store } from '@ngrx/store';
 import { RESET } from './../../core/pet-tag.actions';
-import { PetTag, initialTag } from './../../core/pet-tag.model';
+import { PetTag } from './../../core/pet-tag.model';
 import { AuthService } from './../../core/auth.service';
 
 @Component({
@@ -14,7 +14,6 @@ export class CompleteComponent implements OnInit, OnDestroy {
   tagState$: Observable<PetTag>;
   private tagStateSubscription: Subscription;
   petTag: PetTag;
-  emptyTag: PetTag = initialTag;
 
   constructor(private store: Store<PetTag>, public auth: AuthService) {
     this.tagState$ = store.select('petTag');
@@ -32,8 +31,7 @@ export class CompleteComponent implements OnInit, OnDestroy {
 
   newTag() {
     this.store.dispatch({
-      type: RESET,
-      payload: this.emptyTag
+      type: RESET
     });
   }
 

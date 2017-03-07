@@ -29,7 +29,7 @@ export function petTagReducer(state: PetTag = initialTag, action: Action) {
         complete: action.payload
       });
     case RESET:
-      return Object.assign({}, state, action.payload);
+      return Object.assign({}, state, initialTag);
     default:
       return state;
   }
