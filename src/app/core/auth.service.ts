@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { tokenNotExpired } from 'angular2-jwt';
 
 // avoid name not found warnings
 declare var Auth0Lock: any;
@@ -55,6 +54,8 @@ export class AuthService {
   get authenticated(): boolean {
     // check for id_token in localStorage
     // NOTE: if you were calling an API, an access_token is needed instead
+    // npm install angular2-jwt@latest --save
+    // https://github.com/auth0/angular2-jwt
     // To learn how to implement Auth0 with implicit grant, see:
     // https://auth0.com/docs/api-auth/tutorials/implicit-grant
     return !!localStorage.getItem('id_token');
