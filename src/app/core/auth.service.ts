@@ -53,8 +53,11 @@ export class AuthService {
   }
 
   get authenticated(): boolean {
-    // search for an item in localStorage with key == 'id_token'
-    return tokenNotExpired();
+    // check for id_token in localStorage
+    // NOTE: if you were calling an API, an access_token is needed instead
+    // To learn how to implement Auth0 with implicit grant, see:
+    // https://auth0.com/docs/api-auth/tutorials/implicit-grant
+    return !!localStorage.getItem('id_token');
   }
 
 }
