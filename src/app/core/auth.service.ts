@@ -52,10 +52,8 @@ export class AuthService {
   }
 
   get authenticated(): boolean {
-    // check for id_token in localStorage
-    // NOTE: if you were calling an API, an access_token is needed instead
-    // npm install angular2-jwt@latest --save
-    // https://github.com/auth0/angular2-jwt
+    // Check for id_token in localStorage
+    // NOTE: if you were calling an API, an access_token is needed
     // To learn how to implement Auth0 with implicit grant, see:
     // https://auth0.com/docs/api-auth/tutorials/implicit-grant
     return !!localStorage.getItem('id_token');
